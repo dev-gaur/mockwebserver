@@ -52,6 +52,12 @@ public class AttributeSet {
         return new AttributeSet(all);
     }
 
+    public void join(AttributeSet attributeSet) {
+        for (Map.Entry<Key, Attribute> attr :attributeSet.attributes.entrySet()) {
+            this.attributes.put(attr.getKey(), attr.getValue());
+        }
+    }
+
     public boolean containsKey(String key) {
         return containsKey(new Key(key));
     }
